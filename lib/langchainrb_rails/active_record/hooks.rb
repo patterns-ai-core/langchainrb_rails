@@ -9,12 +9,7 @@ module LangchainrbRails
     #
     # Usage:
     #     class Recipe < ActiveRecord::Base
-    #       vectorsearch provider: Langchain::Vectorsearch::Weaviate.new(
-    #                    api_key: ENV["WEAVIATE_API_KEY"],
-    #                    url: ENV["WEAVIATE_URL"],
-    #                    index_name: "Recipes",
-    #                    llm: Langchain::LLM::OpenAI.new(api_key: ENV["OPENAI_API_KEY"])
-    #                 )
+    #       vectorsearch
     #
     #       after_save :upsert_to_vectorsearch
     #
@@ -73,8 +68,8 @@ module LangchainrbRails
         # Set the vector search provider
         #
         # @param provider [Object] The `Langchain::Vectorsearch::*` instance
-        def vectorsearch(provider:)
-          class_variable_set(:@@provider, provider)
+        def vectorsearch
+          class_variable_set(:@@provider, LangchainrbRails.config.vectorsearch)
         end
 
         # Search for similar texts

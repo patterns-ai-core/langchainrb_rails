@@ -1,0 +1,10 @@
+# frozen_string_literal: true
+
+LangchainrbRails.configure do |config|
+  config.vectorsearch = Langchain::Vectorsearch::Pinecone.new(
+    llm: <%= llm_class %>.new(api_key: ENV["<%= llm.upcase %>_API_KEY"]),
+    environment: "",
+    api_key: ENV["PINECONE_API_KEY"],
+    index_name: ""
+  )
+end
