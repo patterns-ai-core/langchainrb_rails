@@ -1,0 +1,54 @@
+PATH
+  remote: .
+  specs:
+    langchainrb_rails (0.1.0)
+      langchainrb (~> 0.6.19)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    addressable (2.8.5)
+      public_suffix (>= 2.0.2, < 6.0)
+    baran (0.1.9)
+    colorize (0.8.1)
+    diff-lcs (1.5.0)
+    json-schema (4.0.0)
+      addressable (>= 2.8)
+    langchainrb (0.6.19)
+      baran (~> 0.1.9)
+      colorize (~> 0.8.1)
+      json-schema (~> 4.0.0)
+      pragmatic_segmenter (~> 0.3.0)
+      tiktoken_ruby (~> 0.0.5)
+      zeitwerk (= 2.6.11)
+    pragmatic_segmenter (0.3.23)
+      unicode
+    public_suffix (5.0.3)
+    rake (13.0.6)
+    rspec (3.12.0)
+      rspec-core (~> 3.12.0)
+      rspec-expectations (~> 3.12.0)
+      rspec-mocks (~> 3.12.0)
+    rspec-core (3.12.2)
+      rspec-support (~> 3.12.0)
+    rspec-expectations (3.12.3)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-mocks (3.12.6)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-support (3.12.1)
+    tiktoken_ruby (0.0.6-x86_64-darwin)
+    unicode (0.4.4.4)
+    zeitwerk (2.6.11)
+
+PLATFORMS
+  x86_64-darwin-19
+
+DEPENDENCIES
+  langchainrb_rails!
+  rake (~> 13.0)
+  rspec (~> 3.0)
+
+BUNDLED WITH
+   2.4.0
