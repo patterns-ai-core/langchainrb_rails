@@ -17,11 +17,9 @@ module LangchainrbRails
   end
 
   class << self
-    # Configures global settings for Langchain
+    # Configures global settings for LangchainrbRails
     #     LangchainrbRails.configure do |config|
-    #       config.vectorsearch = Langchain::Vectorsearch::Pgvector.new(
-    #         llm: Langchain::LLM::OpenAI.new(api_key: ENV["OPENAI_API_KEY"])
-    #       )
+    #       config.vectorsearch = ...
     #     end
     def configure
       yield(config)

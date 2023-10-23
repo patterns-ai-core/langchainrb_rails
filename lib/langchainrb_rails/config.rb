@@ -2,13 +2,11 @@
 
 module LangchainrbRails
   class Config
-    # This class is used to configure the Langchain.rb gem inside Rails apps, in the `config/initializers/langchain.rb` file.
+    # This class is used to configure the gem config inside Rails apps, in the `config/initializers/langchainrb_rails.rb` file.
     #
     # Langchain is configured in the following way:
-    #     Langchain.configure do |config|
-    #       config.vectorsearch = Langchain::Vectorsearch::Pgvector.new(
-    #         llm: Langchain::LLM::OpenAI.new(api_key: ENV["OPENAI_API_KEY"])
-    #       )
+    #     LangchainrbRails.configure do |config|
+    #       config.vectorsearch = ...
     #     end
     attr_accessor :vectorsearch
 
