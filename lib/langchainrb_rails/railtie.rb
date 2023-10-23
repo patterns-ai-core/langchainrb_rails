@@ -7,5 +7,9 @@ module LangchainrbRails
         ::ActiveRecord::Base.include LangchainrbRails::ActiveRecord::Hooks
       end
     end
+
+    generators do
+      require_relative "generators/langchainrb_rails/pinecone_generator"
+    end
   end
 end
