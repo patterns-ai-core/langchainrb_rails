@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    langchainrb_rails (0.1.0)
-      langchainrb (~> 0.6.19)
+    langchainrb_rails (0.1.1)
+      langchainrb (~> 0.7.0)
 
 GEM
   remote: https://rubygems.org/
@@ -19,7 +19,7 @@ GEM
     json (2.6.3)
     json-schema (4.0.0)
       addressable (>= 2.8)
-    langchainrb (0.6.19)
+    langchainrb (0.7.0)
       baran (~> 0.1.9)
       colorize (~> 0.8.1)
       json-schema (~> 4.0.0)
