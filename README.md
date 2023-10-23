@@ -25,25 +25,19 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
     gem install langchainrb_rails
 
-## Usage
+## Rails Generators
 
-```ruby
-require "langchainrb_rails"
+### Pinecone Generator - adds vectorsearch to your ActiveRecord model
+
 ```
-
-## Generators
-
-### Vectorsearch
-
-#### Pinecone Generator
-
-Command: `rails generate langchainrb_rails:pinecone --model=Product --llm=openai`
+rails generate langchainrb_rails:pinecone --model=Product --llm=openai
+```
 
 Available `--llm` options: `cohere`, `google_palm`, `hugging_face`, `llama_cpp`, `ollama`, `openai`, and `replicate`. The selected LLM will be used to generate embeddings and completions.
 
 The `--model` option is used to specify which ActiveRecord model vectorsearch capabilities will be added to.
 
-PineconeGenerator does the following:
-1. Creates the `langchainrb_rails.rb` initializer file
+Pinecone Generator does the following:
+1. Creates the `config/initializers/langchainrb_rails.rb` initializer file
 2. Adds necessary code to the ActiveRecord model to enable vectorsearch
 3. Adds `pinecone` gem to the Gemfile
