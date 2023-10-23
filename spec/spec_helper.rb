@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "rails"
 require "langchainrb_rails"
 
 RSpec.configure do |config|
