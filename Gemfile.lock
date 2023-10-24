@@ -86,7 +86,11 @@ GEM
     baran (0.1.9)
     base64 (0.1.1)
     bigdecimal (3.1.4)
+    brakeman (6.0.1)
     builder (3.2.4)
+    bundler-audit (0.9.1)
+      bundler (>= 1.2.0, < 3)
+      thor (~> 1.0)
     byebug (11.1.3)
     coderay (1.1.3)
     colorize (0.8.1)
@@ -282,12 +286,15 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  brakeman
+  bundler-audit
   langchainrb
   langchainrb_rails!
   pry-byebug (~> 3.10.0)
   rails (> 6.0.0)
   rake (~> 13.0)
   rspec (~> 3.0)
+  rubocop
   standardrb
   yard (~> 0.9.34)
 
