@@ -14,7 +14,7 @@ module LangchainrbRails
     class ChromaGenerator < LangchainrbRails::Generators::BaseGenerator
       desc "This generator adds Chroma vectorsearch integration to your ActiveRecord model"
       source_root File.join(__dir__, "templates")
-      
+
       # Creates the `langchainrb_rails.rb` initializer file
       def create_initializer_file
         template "chroma_initializer.rb", "config/initializers/langchainrb_rails.rb"
