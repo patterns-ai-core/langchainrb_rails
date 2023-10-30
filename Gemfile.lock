@@ -113,12 +113,14 @@ GEM
     json (2.6.3)
     json-schema (4.0.0)
       addressable (>= 2.8)
-    langchainrb (0.7.0)
+    langchainrb (0.7.1)
       baran (~> 0.1.9)
       colorize (~> 0.8.1)
       json-schema (~> 4.0.0)
+      matrix
       pragmatic_segmenter (~> 0.3.0)
       tiktoken_ruby (~> 0.0.5)
+      to_bool (~> 2.0.0)
       zeitwerk (~> 2.5)
     language_server-protocol (3.17.0.3)
     lint_roller (1.1.0)
@@ -131,6 +133,7 @@ GEM
       net-pop
       net-smtp
     marcel (1.0.2)
+    matrix (0.4.2)
     method_source (1.0.0)
     mini_mime (1.1.5)
     mini_portile2 (2.8.5)
@@ -268,6 +271,7 @@ GEM
     tiktoken_ruby (0.0.6-x86_64-darwin)
     tiktoken_ruby (0.0.6-x86_64-linux)
     timeout (0.4.0)
+    to_bool (2.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode (0.4.4.4)
@@ -277,7 +281,7 @@ GEM
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     yard (0.9.34)
-    zeitwerk (2.6.11)
+    zeitwerk (2.6.12)
 
 PLATFORMS
   ruby
