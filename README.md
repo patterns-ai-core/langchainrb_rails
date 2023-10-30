@@ -31,7 +31,6 @@ If bundler is not being used to manage dependencies, install the gem by executin
 ## Rails Generators
 
 ### Pinecone Generator - adds vectorsearch to your ActiveRecord model
-
 ```
 rails generate langchainrb_rails:pinecone --model=Product --llm=openai
 ```
@@ -44,3 +43,8 @@ Pinecone Generator does the following:
 1. Creates the `config/initializers/langchainrb_rails.rb` initializer file
 2. Adds necessary code to the ActiveRecord model to enable vectorsearch
 3. Adds `pinecone` gem to the Gemfile
+
+### Chroma Generator - adds vectorsearch to your ActiveRecord model
+```
+rails generate langchainrb_rails:chroma --model=Product --llm=openai
+```
