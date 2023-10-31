@@ -33,7 +33,7 @@ If bundler is not being used to manage dependencies, install the gem by executin
 1. Generate changes to support vectorsearch in your chosen ActiveRecord model
 
 ```
-rails generate langchainrb_rails:pg_vector --model=Product --llm=openai
+rails generate langchainrb_rails:pgvector --model=Product --llm=openai
 ```
 
 This adds required dependencies to your Gemfile, creates the initializer file `config/initializers/langchainrb_rails.rb`, database migrations to support vectorsearch, and adds the necessary code to the ActiveRecord model to enable vectorsearch.
@@ -107,7 +107,7 @@ Re-generate embeddings after modifying this method:
 ### PgVector Generator
 
 ```
-rails generate langchainrb_rails:pg_vector --model=Product --llm=openai
+rails generate langchainrb_rails:pgvector --model=Product --llm=openai
 ```
 
 ### Pinecone Generator - adds vectorsearch to your ActiveRecord model
