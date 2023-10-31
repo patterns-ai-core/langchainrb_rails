@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "forwardable"
 require "langchain"
 require "rails"
 require_relative "langchainrb_rails/version"
