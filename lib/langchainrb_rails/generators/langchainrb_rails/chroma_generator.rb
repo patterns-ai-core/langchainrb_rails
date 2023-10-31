@@ -3,21 +3,21 @@
 module LangchainrbRails
   module Generators
     #
-    # PineconeGenerator does the following:
+    # ChromaGenerator does the following:
     # 1. Creates the `langchainrb_rails.rb` initializer file
     # 2. Adds necessary code to the ActiveRecord model to enable vectorsearch
-    # 3. Adds `pinecone` gem to the Gemfile
+    # 3. Adds `chroma-db` gem to the Gemfile
     #
     # Usage:
-    #     rails generate langchainrb_rails:pinecone --model=Product --llm=openai
+    #     rails generate langchainrb_rails:chrome --model=Product --llm=openai
     #
-    class PineconeGenerator < LangchainrbRails::Generators::BaseGenerator
-      desc "This generator adds Pinecone vectorsearch integration to your ActiveRecord model"
+    class ChromaGenerator < LangchainrbRails::Generators::BaseGenerator
+      desc "This generator adds Chroma vectorsearch integration to your ActiveRecord model"
       source_root File.join(__dir__, "templates")
 
       # Creates the `langchainrb_rails.rb` initializer file
       def create_initializer_file
-        template "pinecone_initializer.rb", "config/initializers/langchainrb_rails.rb"
+        template "chroma_initializer.rb", "config/initializers/langchainrb_rails.rb"
       end
 
       # Adds `vectorsearch` class method to the model and `after_save` callback that calls `upsert_to_vectorsearch()`
@@ -27,10 +27,10 @@ module LangchainrbRails
         end
       end
 
-      # Adds `pinecone` gem to the Gemfile
+      # Adds `chroma-db` gem to the Gemfile
       # TODO: Can we automatically run `bundle install`?
       def add_to_gemfile
-        gem "pinecone", version: "~> 0.1.6"
+        gem "chroma-db", version: "~> 0.6.0"
       end
 
       private

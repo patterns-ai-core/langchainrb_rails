@@ -1,0 +1,28 @@
+AllCops:
+  TargetRubyVersion: 2.7
+  NewCops: enable
+  Exclude:
+    - 'bin/**/*'
+    - 'db/schema.rb'
+    - 'vendor/**/*'
+    - 'spec/fixtures/**/*'
+
+Metrics/LineLength:
+  Max: 140
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+
+Style/StringLiterals:
+  Enabled: false
+
+Lint/SuppressedException:
+  Exclude:
+    - 'spec/**/*.rb'

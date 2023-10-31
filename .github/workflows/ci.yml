@@ -36,6 +36,10 @@ jobs:
           ruby-version: 3.2
           bundler: default
           bundler-cache: true
+      - name: Security audit dependencies
+        run: bundle exec bundler-audit --update
+      - name: Security audit application code
+        run: bundle exec brakeman -q -w2 --force
       - name: StandardRb check
         run: bundle exec standardrb --format progress --format github --color
   docs:

@@ -1,4 +1,4 @@
-require "rails/generators/active_record"
+# frozen_string_literal: true
 
 module LangchainrbRails
   module Generators
@@ -6,24 +6,9 @@ module LangchainrbRails
     # Usage:
     #     rails g langchain:pgvector -model=Product -llm=openai
     #
-    class PgvectorGenerator < Rails::Generators::Base
+    class PgvectorGenerator < LangchainrbRails::Generators::BaseGenerator
       desc "This generator adds Pgvector vectorsearch integration to your ActiveRecord model"
-
-      include ::ActiveRecord::Generators::Migration
       source_root File.join(__dir__, "templates")
-
-      class_option :model, type: :string, required: true, desc: "ActiveRecord Model to add vectorsearch to", aliases: "-m"
-      class_option :llm, type: :string, required: true, desc: "LLM provider that will be used to generate embeddings and completions"
-
-      LLMS = {
-        "cohere" => "Langchain::LLM::Cohere",
-        "google_palm" => "Langchain::LLM::GooglePalm",
-        "hugging_face" => "Langchain::LLM::HuggingFace",
-        "llama_cpp" => "Langchain::LLM::LlamaCpp",
-        "ollama" => "Langchain::LLM::Ollama",
-        "openai" => "Langchain::LLM::OpenAI",
-        "replicate" => "Langchain::LLM::Replicate"
-      }
 
       def copy_migration
         migration_template "enable_vector_extension_template.rb", "db/migrate/enable_vector_extension.rb", migration_version: migration_version
@@ -47,13 +32,14 @@ module LangchainrbRails
       def add_to_gemfile
         # Dependency for Langchain PgVector
         gem "neighbor"
+        gem "ruby-openai"
       end
 
       def post_install_message
         say "Please do the following to start Q&A with your #{model_name} records:", :green
         say "1. Run `bundle install` to install the new gems."
-        say "2. Run `rails db:migrate` to apply the database migrations to enable pgvector and add the embedding column."
-        say "3. Set the env var OPENAI_API_KEY to your OpenAI API key."
+        say "2. Set `OPENAI_API_KEY` environment variable to your OpenAI API key."
+        say "3. Run `rails db:migrate` to apply the database migrations to enable pgvector and add the embedding column."
         say "4. In Rails console, run `#{model_name}.embed!` to set the embeddings for all records."
         say "5. Ask a question in the Rails console, ie: `#{model_name}.ask('[YOUR QUESTION]')`"
       end

@@ -9,7 +9,7 @@ module Langchain::Vectorsearch
     #     gem "pgvector", "~> 0.2"
     #
     # Usage:
-    #     pgvector = Langchain::Vectorsearch::Pgvector.new(llm:, model_name:)
+    #     pgvector = Langchain::Vectorsearch::Pgvector.new(llm:)
     #
 
     # The operators supported by the PostgreSQL vector search adapter

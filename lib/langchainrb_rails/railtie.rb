@@ -9,6 +9,7 @@ module LangchainrbRails
     end
 
     generators do
+      require_relative "generators/langchainrb_rails/chroma_generator"
       require_relative "generators/langchainrb_rails/pinecone_generator"
       require_relative "generators/langchainrb_rails/pgvector_generator"
     end

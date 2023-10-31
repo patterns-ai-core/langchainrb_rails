@@ -13,6 +13,11 @@ The fastest way to sprinkle AI ✨ on top of your Rails app. Add OpenAI-powered 
 * Ruby 3.0+
 * Postgres 11+
 
+## Table of Contents
+
+- [Installation](#installation)
+- [Generators](#rails-generators)
+
 ## Installation
 
 Install the gem and add to the application's Gemfile by executing:
@@ -28,7 +33,7 @@ If bundler is not being used to manage dependencies, install the gem by executin
 1. Generate changes to support vectorsearch in your chosen ActiveRecord model
 
 ```
-rails generate langchainrb_rails:pg_vector --model=Product --llm=openai
+rails generate langchainrb_rails:pgvector --model=Product --llm=openai
 ```
 
 This adds required dependencies to your Gemfile, creates the initializer file `config/initializers/langchainrb_rails.rb`, database migrations to support vectorsearch, and adds the necessary code to the ActiveRecord model to enable vectorsearch.
@@ -102,11 +107,10 @@ Re-generate embeddings after modifying this method:
 ### PgVector Generator
 
 ```
-rails generate langchainrb_rails:pg_vector --model=Product --llm=openai
+rails generate langchainrb_rails:pgvector --model=Product --llm=openai
 ```
 
 ### Pinecone Generator - adds vectorsearch to your ActiveRecord model
-
 ```
 rails generate langchainrb_rails:pinecone --model=Product --llm=openai
 ```
@@ -119,3 +123,8 @@ Pinecone Generator does the following:
 1. Creates the `config/initializers/langchainrb_rails.rb` initializer file
 2. Adds necessary code to the ActiveRecord model to enable vectorsearch
 3. Adds `pinecone` gem to the Gemfile
+
+### Chroma Generator - adds vectorsearch to your ActiveRecord model
+```
+rails generate langchainrb_rails:chroma --model=Product --llm=openai
+```
