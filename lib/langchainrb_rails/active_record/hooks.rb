@@ -61,7 +61,9 @@ module LangchainrbRails
       #
       # @return [String] the text representation of the model
       def as_vector
-        to_json
+        # Don't vectorize the embedding ... this would happen if it already exists
+        # for a record and we update.
+        to_json(except: :embedding)
       end
 
       module ClassMethods
@@ -70,6 +72,21 @@ module LangchainrbRails
         # @param provider [Object] The `Langchain::Vectorsearch::*` instance
         def vectorsearch
           class_variable_set(:@@provider, LangchainrbRails.config.vectorsearch)
+
+          # Pgvector-specific configuration
+          if LangchainrbRails.config.vectorsearch.is_a?(Langchain::Vectorsearch::Pgvector)
+            has_neighbors(:embedding)
+          end
+
+          LangchainrbRails.config.vectorsearch.model = self
+        end
+
+        # Iterates over records and generate embeddings.
+        # Will re-generate for ALL records (not just records with embeddings).
+        def embed!
+          find_each do |record|
+            record.upsert_to_vectorsearch
+          end
         end
 
         # Search for similar texts
@@ -84,7 +101,7 @@ module LangchainrbRails
           )
 
           # We use "__id" when Weaviate is the provider
-          ids = records.map { |record| record.dig("id") || record.dig("__id") }
+          ids = records.map { |record| record.try("id") || record.dig("__id") }
           where(id: ids)
         end
 
@@ -94,12 +111,12 @@ module LangchainrbRails
         # @param k [Integer] The number of results to have in context
         # @yield [String] Stream responses back one String at a time
         # @return [String] The answer to the question
-        def ask(question:, k: 4, &block)
+        def ask(question, k: 4, &block)
           class_variable_get(:@@provider).ask(
-            question: question,
+            question,
             k: k,
             &block
-          )
+          ).completion
         end
       end
     end

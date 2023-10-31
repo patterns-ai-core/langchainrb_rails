@@ -10,13 +10,10 @@ RSpec.describe LangchainrbRails::ActiveRecord::Hooks do
     expect(::Dummy.new).to respond_to(:as_vector)
   end
 
-  it "responds to class method: similarity_search" do
+  it "responds to class methods" do
     expect(::Dummy).to respond_to(:vectorsearch)
     expect(::Dummy).to respond_to(:similarity_search)
-  end
-
-  it "responds to class method: ask" do
-    expect(::Dummy).to respond_to(:vectorsearch)
     expect(::Dummy).to respond_to(:ask)
+    expect(::Dummy).to respond_to(:embed!)
   end
 end
