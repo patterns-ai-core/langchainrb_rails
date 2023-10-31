@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+# Overriding Langchain.rb's Pgvector implementation to use ActiveRecord.
+# Original implementation: https://github.com/andreibondarev/langchainrb/blob/main/lib/langchain/vectorsearch/pgvector.rb
+
 module Langchain::Vectorsearch
   class Pgvector < Base
     #
@@ -20,7 +23,7 @@ module Langchain::Vectorsearch
     ]
     DEFAULT_OPERATOR = "cosine"
 
-    attr_reader :db, :operator, :llm
+    attr_reader :operator, :llm
     attr_accessor :model
 
     # @param url [String] The URL of the PostgreSQL database
@@ -119,7 +122,3 @@ module Langchain::Vectorsearch
     end
   end
 end
-
-# Rails connection when configuring vectorsearch
-# Update READMEs
-# Rails migration to create a migration
