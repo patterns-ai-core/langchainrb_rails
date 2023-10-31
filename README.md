@@ -96,7 +96,7 @@ end
 Re-generate embeddings after modifying this method:
 
 ```ruby
-Product.embed!
+product.embed!
 ```
 
 ## Rails Generators
