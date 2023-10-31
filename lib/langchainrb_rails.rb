@@ -5,6 +5,7 @@ require "rails"
 require_relative "langchainrb_rails/version"
 require "langchainrb_rails/railtie"
 require "langchainrb_rails/config"
+require_relative "langchainrb_overrides/vectorsearch/pgvector"
 
 module LangchainrbRails
   class Error < StandardError; end
