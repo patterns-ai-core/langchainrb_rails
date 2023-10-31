@@ -10,6 +10,7 @@ module LangchainrbRails
 
     generators do
       require_relative "generators/langchainrb_rails/pinecone_generator"
+      require_relative "generators/langchainrb_rails/pgvector_generator"
     end
   end
 end
