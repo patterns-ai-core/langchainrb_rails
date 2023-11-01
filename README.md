@@ -2,6 +2,8 @@
 ---
 The fastest way to sprinkle AI ✨ on top of your Rails app. Add OpenAI-powered question-and-answering in minutes.
 
+Available for paid consulting engagements! [Email me](mailto:andrei@sourcelabs.io).
+
 ![Tests status](https://github.com/andreibondarev/langchainrb_rails/actions/workflows/ci.yml/badge.svg?branch=main)
 [![Gem Version](https://badge.fury.io/rb/langchainrb_rails.svg)](https://badge.fury.io/rb/langchainrb_rails)
 [![Docs](http://img.shields.io/badge/yard-docs-blue.svg)](http://rubydoc.info/gems/langchainrb_rails)
