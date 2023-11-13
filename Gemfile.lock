@@ -113,7 +113,7 @@ GEM
     json (2.6.3)
     json-schema (4.0.0)
       addressable (>= 2.8)
-    langchainrb (0.7.2)
+    langchainrb (0.7.4)
       baran (~> 0.1.9)
       colorize (~> 0.8.1)
       json-schema (~> 4.0.0)
