@@ -76,9 +76,8 @@ module LangchainrbRails
           # Pgvector-specific configuration
           if LangchainrbRails.config.vectorsearch.is_a?(Langchain::Vectorsearch::Pgvector)
             has_neighbors(:embedding)
+            LangchainrbRails.config.vectorsearch.model = self
           end
-
-          LangchainrbRails.config.vectorsearch.model = self
         end
 
         # Iterates over records and generate embeddings.
