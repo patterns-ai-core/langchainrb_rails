@@ -1,5 +1,8 @@
 ## [Unreleased]
 
+## [0.1.4] - 2023-11-20
+- Bugfix AR integration when using vectorsearch other than Pgvector
+
 ## [0.1.3] - 2023-11-01
 - Pgvector vectorsearch generator
 
