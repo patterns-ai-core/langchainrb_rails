@@ -4,7 +4,7 @@ module LangchainrbRails
   module Generators
     #
     # Usage:
-    #     rails g langchain:pgvector -model=Product -llm=openai
+    #     rails generate langchainrb_rails:pgvector --model=Product --llm=openai
     #
     class PgvectorGenerator < LangchainrbRails::Generators::BaseGenerator
       desc "This generator adds Pgvector vectorsearch integration to your ActiveRecord model"
