@@ -12,6 +12,7 @@ module LangchainrbRails
       require_relative "generators/langchainrb_rails/chroma_generator"
       require_relative "generators/langchainrb_rails/pinecone_generator"
       require_relative "generators/langchainrb_rails/pgvector_generator"
+      require_relative "generators/langchainrb_rails/qdrant_generator"
     end
   end
 end

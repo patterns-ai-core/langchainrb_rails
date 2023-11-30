@@ -19,6 +19,7 @@ module LangchainrbRails
     autoload :BaseGenerator, "langchainrb_rails/generators/langchainrb_rails/base_generator"
     autoload :ChromaGenerator, "langchainrb_rails/generators/langchainrb_rails/chroma_generator"
     autoload :PgvectorGenerator, "langchainrb_rails/generators/langchainrb_rails/pgvector_generator"
+    autoload :QdrantGenerator, "langchainrb_rails/generators/langchainrb_rails/qdrant_generator"
   end
 
   class << self

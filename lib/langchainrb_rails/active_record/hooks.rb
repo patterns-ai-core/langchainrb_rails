@@ -112,7 +112,7 @@ module LangchainrbRails
         # @return [String] The answer to the question
         def ask(question, k: 4, &block)
           class_variable_get(:@@provider).ask(
-            question,
+            question: question,
             k: k,
             &block
           ).completion
