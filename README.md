@@ -115,6 +115,11 @@ rails generate langchainrb_rails:pgvector --model=Product --llm=openai
 rails generate langchainrb_rails:pinecone --model=Product --llm=openai
 ```
 
+### Qdrant Generator - adds vectorsearch to your ActiveRecord model
+```bash
+rails generate langchainrb_rails:qdrant --model=Product --llm=openai
+```
+
 Available `--llm` options: `cohere`, `google_palm`, `hugging_face`, `llama_cpp`, `ollama`, `openai`, and `replicate`. The selected LLM will be used to generate embeddings and completions.
 
 The `--model` option is used to specify which ActiveRecord model vectorsearch capabilities will be added to.
