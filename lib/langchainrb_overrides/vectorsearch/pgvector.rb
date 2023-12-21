@@ -105,10 +105,10 @@ module Langchain::Vectorsearch
     # @param k [Integer] The number of results to have in context
     # @yield [String] Stream responses back one String at a time
     # @return [String] The answer to the question
-    def ask(question, k: 4, &block)
+    def ask(question, &block)
       # Noisy as the embedding column has a lot of data
       ActiveRecord::Base.logger.silence do
-        search_results = similarity_search(query: question, k: k)
+        search_results = similarity_search(query: question[:question], k: question[:k])
 
         context = search_results.map do |result|
           result.as_vector
