@@ -87,7 +87,8 @@ GEM
     baran (0.1.10)
     base64 (0.2.0)
     bigdecimal (3.1.4)
-    brakeman (6.1.0)
+    brakeman (6.1.1)
+      racc
     builder (3.2.4)
     bundler-audit (0.9.1)
       bundler (>= 1.2.0, < 3)
