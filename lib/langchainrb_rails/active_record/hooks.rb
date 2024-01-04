@@ -99,6 +99,8 @@ module LangchainrbRails
             k: k
           )
 
+          return records if LangchainrbRails.config.vectorsearch.is_a?(Langchain::Vectorsearch::Pgvector)
+
           # We use "__id" when Weaviate is the provider
           ids = records.map { |record| record.try("id") || record.dig("__id") }
           where(id: ids)
