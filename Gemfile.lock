@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     langchainrb_rails (0.1.5)
-      langchainrb (>= 0.7, < 0.9)
+      langchainrb (>= 0.7, < 0.10)
 
 GEM
   remote: https://rubygems.org/
@@ -115,7 +115,7 @@ GEM
     json (2.7.1)
     json-schema (4.0.0)
       addressable (>= 2.8)
-    langchainrb (0.8.2)
+    langchainrb (0.9.0)
       baran (~> 0.1.9)
       colorize (~> 0.8.1)
       json-schema (~> 4.0.0)
@@ -213,7 +213,7 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.1.0)
-    rb_sys (0.9.84)
+    rb_sys (0.9.87)
     rdoc (6.6.2)
       psych (>= 4.0.0)
     regexp_parser (2.8.3)
