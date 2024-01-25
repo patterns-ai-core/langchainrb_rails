@@ -71,12 +71,12 @@ module LangchainrbRails
         #
         # @param provider [Object] The `Langchain::Vectorsearch::*` instance
         def vectorsearch
-          class_variable_set(:@@provider, LangchainrbRails.config.vectorsearch)
+          class_variable_set(:@@provider, LangchainrbRails.config.vectorsearch.dup)
 
           # Pgvector-specific configuration
           if LangchainrbRails.config.vectorsearch.is_a?(Langchain::Vectorsearch::Pgvector)
             has_neighbors(:embedding)
-            LangchainrbRails.config.vectorsearch.model = self
+            class_variable_get(:@@provider).model = self
           end
         end
 
