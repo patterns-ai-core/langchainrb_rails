@@ -1,5 +1,10 @@
 ## [Unreleased]
 
+## [0.1.6] - 2023-01-25
+- Fix bug when multiple ActiveRecord models use vectorsearch
+- Bump langchainrb version
+- Avoid extra query when Pgvector is used
+
 ## [0.1.5] - 2023-11-30
 - Qdrant vectorsearch generator
 
