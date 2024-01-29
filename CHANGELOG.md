@@ -1,6 +1,9 @@
 ## [Unreleased]
 
-## [0.1.6] - 2023-01-25
+## [0.1.7] - 2024-01-29
+- Fix Pgvector#ask method
+
+## [0.1.6] - 2024-01-25
 - Fix bug when multiple ActiveRecord models use vectorsearch
 - Bump langchainrb version
 - Avoid extra query when Pgvector is used
