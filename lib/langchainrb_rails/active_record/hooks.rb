@@ -117,7 +117,7 @@ module LangchainrbRails
             question: question,
             k: k,
             &block
-          ).completion
+          ).chat_completion
         end
       end
     end
