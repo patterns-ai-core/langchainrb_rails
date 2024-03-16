@@ -1,5 +1,8 @@
 ## [Unreleased]
 
+## [0.1.8] - 2024-03-16
+- Bump langchainrb gem
+
 ## [0.1.7] - 2024-01-29
 - Fix Pgvector#ask method
 
