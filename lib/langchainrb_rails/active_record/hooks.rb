@@ -112,11 +112,11 @@ module LangchainrbRails
         # @param k [Integer] The number of results to have in context
         # @yield [String] Stream responses back one String at a time
         # @return [String] The answer to the question
-        def ask(question, k: 4, &block)
+        def ask(question, k: 4, &)
           class_variable_get(:@@provider).ask(
             question: question,
             k: k,
-            &block
+            &
           ).chat_completion
         end
       end
