@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     langchainrb_rails (0.1.8)
-      langchainrb (>= 0.7, < 0.10)
+      langchainrb (>= 0.7, < 0.11)
 
 GEM
   remote: https://rubygems.org/
@@ -84,9 +84,9 @@ GEM
     addressable (2.8.6)
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
-    baran (0.1.10)
+    baran (0.1.11)
     base64 (0.2.0)
-    bigdecimal (3.1.6)
+    bigdecimal (3.1.7)
     brakeman (6.1.2)
       racc
     builder (3.2.4)
@@ -101,21 +101,20 @@ GEM
     crass (1.0.6)
     date (3.3.4)
     diff-lcs (1.5.1)
-    drb (2.2.0)
-      ruby2_keywords
+    drb (2.2.1)
     erubi (1.12.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
-    i18n (1.14.1)
+    i18n (1.14.4)
       concurrent-ruby (~> 1.0)
     io-console (0.7.2)
     irb (1.11.2)
       rdoc
       reline (>= 0.4.2)
     json (2.7.1)
-    json-schema (4.1.1)
+    json-schema (4.2.0)
       addressable (>= 2.8)
-    langchainrb (0.9.4)
+    langchainrb (0.10.0)
       activesupport (>= 7.0.8)
       baran (~> 0.1.9)
       colorize (~> 1.1.0)
@@ -140,7 +139,7 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.5)
     mini_portile2 (2.8.5)
-    minitest (5.22.2)
+    minitest (5.22.3)
     mutex_m (0.2.0)
     net-imap (0.4.10)
       date
@@ -251,7 +250,6 @@ GEM
       rubocop (>= 1.48.1, < 2.0)
       rubocop-ast (>= 1.30.0, < 2.0)
     ruby-progressbar (1.13.0)
-    ruby2_keywords (0.0.5)
     standard (1.34.0)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.0)
