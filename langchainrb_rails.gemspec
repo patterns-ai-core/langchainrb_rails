@@ -30,7 +30,7 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "langchainrb", ">= 0.7", "< 0.10"
+  spec.add_dependency "langchainrb", ">= 0.7", "< 0.11"
 
   spec.add_development_dependency "pry-byebug", "~> 3.10.0"
   spec.add_development_dependency "yard", "~> 0.9.34"
