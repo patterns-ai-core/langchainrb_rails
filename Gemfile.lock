@@ -111,7 +111,7 @@ GEM
     irb (1.11.2)
       rdoc
       reline (>= 0.4.2)
-    json (2.7.1)
+    json (2.7.2)
     json-schema (4.2.0)
       addressable (>= 2.8)
     langchainrb (0.10.0)
@@ -233,7 +233,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
     rspec-support (3.13.0)
-    rubocop (1.62.0)
+    rubocop (1.63.0)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
