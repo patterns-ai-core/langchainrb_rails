@@ -15,14 +15,6 @@ module Langchain::Vectorsearch
     #     pgvector = Langchain::Vectorsearch::Pgvector.new(llm:)
     #
 
-    # The operators supported by the PostgreSQL vector search adapter
-    OPERATORS = [
-      "cosine",
-      "euclidean",
-      "inner_product"
-    ]
-    DEFAULT_OPERATOR = "cosine"
-
     attr_reader :operator, :llm
     attr_accessor :model
 
@@ -36,7 +28,7 @@ module Langchain::Vectorsearch
       # These happen in the template files.
       # depends_on "neighbor"
 
-      @operator = DEFAULT_OPERATOR
+      @operator = OPERATORS[DEFAULT_OPERATOR]
 
       super(llm: llm)
     end
