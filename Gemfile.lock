@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     langchainrb_rails (0.1.8)
-      langchainrb (>= 0.7, < 0.11)
+      langchainrb (>= 0.7, < 0.12)
 
 GEM
   remote: https://rubygems.org/
@@ -112,16 +112,16 @@ GEM
       rdoc
       reline (>= 0.4.2)
     json (2.7.2)
-    json-schema (4.2.0)
+    json-schema (4.3.0)
       addressable (>= 2.8)
-    langchainrb (0.10.0)
+    langchainrb (0.11.2)
       activesupport (>= 7.0.8)
       baran (~> 0.1.9)
       colorize (~> 1.1.0)
       json-schema (~> 4)
       matrix
       pragmatic_segmenter (~> 0.3.0)
-      tiktoken_ruby (~> 0.0.7)
+      tiktoken_ruby (~> 0.0.8)
       to_bool (~> 2.0.0)
       zeitwerk (~> 2.5)
     language_server-protocol (3.17.0.3)
@@ -172,7 +172,7 @@ GEM
       pry (>= 0.13, < 0.15)
     psych (5.1.2)
       stringio
-    public_suffix (5.0.4)
+    public_suffix (5.0.5)
     racc (1.7.3)
     rack (3.0.9.1)
     rack-session (2.0.0)
@@ -213,7 +213,7 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.2.1)
-    rb_sys (0.9.90)
+    rb_sys (0.9.94)
     rdoc (6.6.3.1)
       psych (>= 4.0.0)
     regexp_parser (2.9.0)
@@ -266,10 +266,10 @@ GEM
       standard
     stringio (3.1.0)
     thor (1.3.0)
-    tiktoken_ruby (0.0.7)
+    tiktoken_ruby (0.0.8)
       rb_sys (>= 0.9.86)
-    tiktoken_ruby (0.0.7-x86_64-darwin)
-    tiktoken_ruby (0.0.7-x86_64-linux)
+    tiktoken_ruby (0.0.8-x86_64-darwin)
+    tiktoken_ruby (0.0.8-x86_64-linux)
     timeout (0.4.1)
     to_bool (2.0.0)
     tzinfo (2.0.6)
