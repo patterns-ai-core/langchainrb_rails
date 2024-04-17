@@ -16,7 +16,7 @@ module Langchain::Vectorsearch
     #
 
     # The operators supported by the PostgreSQL vector search adapter
-    OPERATORS = [
+    VECTOR_SEARCH_OPERATORS = [
       "cosine",
       "euclidean",
       "inner_product"
