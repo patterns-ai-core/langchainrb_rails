@@ -112,13 +112,15 @@ module LangchainrbRails
         # @param k [Integer] The number of results to have in context
         # @yield [String] Stream responses back one String at a time
         # @return [String] The answer to the question
-        def ask(question, k: 4, &block)
+        # standard:disable Style/ArgumentsForwarding
+	def ask(question, k: 4, &block)
           class_variable_get(:@@provider).ask(
             question: question,
             k: k,
             &block
           ).chat_completion
         end
+	# standard:enable Style/ArgumentsForwarding
       end
     end
   end
