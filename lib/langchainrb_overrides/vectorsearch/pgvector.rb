@@ -21,7 +21,7 @@ module Langchain::Vectorsearch
       "euclidean",
       "inner_product"
     ]
-    OPERATOR = "cosine"
+    DEFAULT_VECTOR_SEARCH_OPERATOR = "cosine"
 
     attr_reader :operator, :llm
     attr_accessor :model
@@ -36,7 +36,7 @@ module Langchain::Vectorsearch
       # These happen in the template files.
       # depends_on "neighbor"
 
-      @operator = DEFAULT
+      @operator = DEFAULT_VECTOR_SEARCH_OPERATOR
 
       super(llm: llm)
     end
