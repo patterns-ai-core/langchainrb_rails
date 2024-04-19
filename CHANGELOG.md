@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.1.9] - 2024-04-19
+- Bump langchainrb gem to include v0.11.x
+- Remove pg_vector Overriding Operator Constants
+
 ## [0.1.8] - 2024-03-16
 - Bump langchainrb gem
 
