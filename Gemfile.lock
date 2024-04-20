@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    langchainrb_rails (0.1.8)
+    langchainrb_rails (0.1.9)
       langchainrb (>= 0.7, < 0.12)
 
 GEM
@@ -114,7 +114,7 @@ GEM
     json (2.7.2)
     json-schema (4.3.0)
       addressable (>= 2.8)
-    langchainrb (0.11.2)
+    langchainrb (0.11.4)
       activesupport (>= 7.0.8)
       baran (~> 0.1.9)
       colorize (~> 1.1.0)
@@ -213,7 +213,7 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.2.1)
-    rb_sys (0.9.94)
+    rb_sys (0.9.96)
     rdoc (6.6.3.1)
       psych (>= 4.0.0)
     regexp_parser (2.9.0)
