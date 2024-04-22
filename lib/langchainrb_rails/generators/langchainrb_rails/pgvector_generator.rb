@@ -67,8 +67,8 @@ module LangchainrbRails
       end
 
       # @return [Integer] Dimension of the vector to be used
-      def vector_dimension
-        llm_class.default_dimension
+      def vector_dimensions
+        llm_class.default_dimensions
       end
     end
   end

@@ -5,6 +5,6 @@ class <%= migration_class_name %> < ActiveRecord::Migration<%= migration_version
         .config
         .vectorsearch
         .llm
-        .default_dimension
+        .default_dimensions
   end
 end
