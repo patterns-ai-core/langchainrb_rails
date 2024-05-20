@@ -19,6 +19,15 @@ module LangchainrbRails
         "openai" => "Langchain::LLM::OpenAI",
         "replicate" => "Langchain::LLM::Replicate"
       }
+
+      def post_install_message
+        say "Please do the following to start Q&A with your #{model_name} records:", :green
+        say "1. Run `bundle install` to install the new gems."
+        say "2. Set an environment variable ENV['#{llm.upcase}_API_KEY'] for your #{llm_class}."
+        say "3. Run `rails db:migrate` to apply the database migrations to enable pgvector and add the embedding column."
+        say "4. In Rails console, run `#{model_name}.embed!` to set the embeddings for all records."
+        say "5. Ask a question in the Rails console, ie: `#{model_name}.ask('[YOUR QUESTION]')`"
+      end
     end
   end
 end

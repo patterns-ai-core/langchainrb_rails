@@ -35,15 +35,6 @@ module LangchainrbRails
         gem "ruby-openai"
       end
 
-      def post_install_message
-        say "Please do the following to start Q&A with your #{model_name} records:", :green
-        say "1. Run `bundle install` to install the new gems."
-        say "2. Set `OPENAI_API_KEY` environment variable to your OpenAI API key."
-        say "3. Run `rails db:migrate` to apply the database migrations to enable pgvector and add the embedding column."
-        say "4. In Rails console, run `#{model_name}.embed!` to set the embeddings for all records."
-        say "5. Ask a question in the Rails console, ie: `#{model_name}.ask('[YOUR QUESTION]')`"
-      end
-
       private
 
       # @return [String] Name of the model

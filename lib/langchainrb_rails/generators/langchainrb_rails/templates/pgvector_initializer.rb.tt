@@ -2,6 +2,6 @@
 
 LangchainrbRails.configure do |config|
   config.vectorsearch = Langchain::Vectorsearch::Pgvector.new(
-    llm: <%= llm_class %>.new(api_key: ENV["OPENAI_API_KEY"])
+    llm: <%= llm_class %>.new(api_key: ENV["<%= llm.upcase %>_API_KEY"])
   )
 end
