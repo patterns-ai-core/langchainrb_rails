@@ -6,12 +6,14 @@ module LangchainrbRails
     # * `vectorsearch` class method to set the vector search provider
     # * `similarity_search` class method to search for similar texts
     # * `upsert_to_vectorsearch` instance method to upsert the record to the vector search provider
+    # * `destroy_from_vectorsearch` instance method to remove the record from the vector search provider
     #
     # Usage:
     #     class Recipe < ActiveRecord::Base
     #       vectorsearch
     #
     #       after_save :upsert_to_vectorsearch
+    #       after_destroy :destroy_from_vectorsearch
     #
     #       # Overwriting how the model is serialized before it's indexed
     #       def as_vector
@@ -54,6 +56,17 @@ module LangchainrbRails
             ids: [id]
           )
         end
+      end
+
+      # Remove the record from the vector search provider
+      # This method should be called in an ActiveRecord `after_destroy` callback
+      #
+      # @return [Boolean] true
+      # @raise [Error] Removing from vector search DB failed
+      def destroy_from_vectorsearch
+        self.class.class_variable_get(:@@provider).remove_texts(
+          ids: [id]
+        )
       end
 
       # Used to serialize the DB record to an indexable vector text
