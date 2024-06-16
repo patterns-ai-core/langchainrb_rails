@@ -1,5 +1,10 @@
 ## [Unreleased]
 
+## [0.1.11] - 2024-06-16
+- Add destroy_from_vectorsearch hook
+
+## [0.1.10] - 2024-05-20
+
 ## [0.1.9] - 2024-04-19
 - Bump langchainrb gem to include v0.11.x
 - Remove pg_vector Overriding Operator Constants
