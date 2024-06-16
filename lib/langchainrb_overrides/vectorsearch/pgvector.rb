@@ -55,6 +55,16 @@ module Langchain::Vectorsearch
       add_texts(texts: texts, ids: ids)
     end
 
+    # Remove vectors from the index
+    #
+    # @param ids [Array<String>] The ids of the vectors to remove
+    # @return [Boolean] true
+    def remove_texts(ids:)
+      # Since the record is being destroyed and the `embedding` is a column on the record,
+      # we don't need to do anything here.
+      true
+    end
+
     # Invoke a rake task that will create an initializer (`config/initializers/langchain.rb`) file
     # and db/migrations/* files
     def create_default_schema

@@ -7,6 +7,7 @@ end
 RSpec.describe LangchainrbRails::ActiveRecord::Hooks do
   it "responds to instance methods" do
     expect(::Dummy.new).to respond_to(:upsert_to_vectorsearch)
+    expect(::Dummy.new).to respond_to(:destroy_from_vectorsearch)
     expect(::Dummy.new).to respond_to(:as_vector)
   end
 
