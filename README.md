@@ -102,14 +102,6 @@ Re-generate embeddings after modifying this method:
 Product.embed!
 ```
 
-## Handling Record Deletions with `destroy_from_vectorsearch`
-
-When using vectorsearch capabilities in your models, it's important to ensure that records are also removed from the vectorsearch database upon deletion. To facilitate this, the `destroy_from_vectorsearch` hook is provided.
-
-After destroying a record in your Rails application, the `destroy_from_vectorsearch` method is automatically called if your model includes vectorsearch capabilities. This ensures that the record is also removed from the vectorsearch database, keeping your search results relevant and up to date.
-
-To use this feature, ensure your model includes the vectorsearch setup and has the `after_destroy :destroy_from_vectorsearch` callback defined. This is typically handled by the Rails generator when setting up vectorsearch for your model.
-
 ## Rails Generators
 
 ### Pgvector Generator
