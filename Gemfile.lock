@@ -173,7 +173,7 @@ GEM
     psych (5.1.2)
       stringio
     public_suffix (5.0.5)
-    racc (1.8.0)
+    racc (1.8.1)
     rack (3.0.11)
     rack-session (2.0.0)
       rack (>= 3.0.0)
@@ -219,7 +219,7 @@ GEM
     regexp_parser (2.9.2)
     reline (0.5.8)
       io-console (~> 0.5)
-    rexml (3.3.1)
+    rexml (3.3.4)
       strscan
     rspec (3.13.0)
       rspec-core (~> 3.13.0)
@@ -234,7 +234,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
     rspec-support (3.13.0)
-    rubocop (1.65.0)
+    rubocop (1.65.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
