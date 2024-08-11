@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     langchainrb_rails (0.1.11)
-      langchainrb (>= 0.7, < 0.14)
+      langchainrb (>= 0.7, < 0.15)
 
 GEM
   remote: https://rubygems.org/
