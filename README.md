@@ -134,7 +134,7 @@ Pinecone Generator does the following:
 rails genearate langchainrb_rails:prompt
 ```
 
-This generator adds the following to your ActiveRecord model:
+This generator adds the following files to your Rails project:
 1. An ActiveRecord `Prompt` model at `app/models/prompt.rb`
 2. A rails migration to create the `prompts` table
 
