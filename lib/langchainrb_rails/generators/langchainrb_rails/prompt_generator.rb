@@ -1,5 +1,7 @@
-require 'rails/generators'
-require 'rails/generators/active_record'
+# frozen_string_literal: true
+
+require "rails/generators"
+require "rails/generators/active_record"
 
 module LangchainrbRails
   module Generators
@@ -9,8 +11,8 @@ module LangchainrbRails
       source_root File.join(__dir__, "templates")
 
       def create_prompt_model
-        template 'prompt_model.rb', 'app/models/prompt.rb'
-        migration_template 'create_prompts.rb', 'db/migrate/create_prompts.rb'
+        template "prompt_model.rb", "app/models/prompt.rb"
+        migration_template "create_prompts.rb", "db/migrate/create_prompts.rb"
       end
     end
   end

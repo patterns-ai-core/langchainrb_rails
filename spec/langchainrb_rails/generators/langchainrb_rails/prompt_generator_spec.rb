@@ -1,8 +1,10 @@
-require 'spec_helper'
-require 'generator_spec'
+# frozen_string_literal: true
+
+require "spec_helper"
+require "generator_spec"
 
 RSpec.describe LangchainrbRails::Generators::PromptGenerator, type: :generator do
-  destination File.expand_path('../tmp', __dir__)
+  destination File.expand_path("../tmp", __dir__)
 
   before(:all) do
     prepare_destination

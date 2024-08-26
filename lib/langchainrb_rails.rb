@@ -6,7 +6,7 @@ require "rails"
 require_relative "langchainrb_rails/version"
 require "langchainrb_rails/railtie"
 require "langchainrb_rails/config"
-require 'langchainrb_rails/prompting'
+require "langchainrb_rails/prompting"
 require_relative "langchainrb_overrides/vectorsearch/pgvector"
 
 module LangchainrbRails
