@@ -1,0 +1,3 @@
+class Prompt < ApplicationRecord
+  include LangchainrbRails::Models::Prompt
+end

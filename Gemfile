@@ -9,10 +9,11 @@ gem "rake", "~> 13.2"
 
 gem "rspec", "~> 3.13"
 
-gem "bundler-audit", require: false
 gem "brakeman", require: false
+gem "bundler-audit", require: false
 gem "rubocop", require: false
 
 gem "standardrb"
 
+gem "generator_spec"
 gem "langchainrb"

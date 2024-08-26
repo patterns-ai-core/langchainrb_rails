@@ -1,0 +1,15 @@
+class CreatePrompts < ActiveRecord::Migration[6.0]
+  def change
+    create_table :prompts do |t|
+      t.text :template, null: false
+      t.string :name
+      t.string :description
+      t.string :version
+      t.boolean :active, default: true
+
+      t.timestamps
+    end
+
+    add_index :prompts, :name, unique: true
+  end
+end
