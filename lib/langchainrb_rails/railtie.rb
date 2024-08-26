@@ -2,10 +2,6 @@
 
 module LangchainrbRails
   class Railtie < Rails::Railtie
-    initializer 'langchainrb_rails.autoload', before: :set_autoload_paths do |app|
-      app.config.autoload_paths << File.expand_path('models', __dir__)
-    end
-
     initializer "langchain" do
       ActiveSupport.on_load(:active_record) do
         ::ActiveRecord::Base.include LangchainrbRails::ActiveRecord::Hooks

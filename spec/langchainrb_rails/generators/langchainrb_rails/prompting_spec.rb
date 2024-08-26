@@ -2,11 +2,11 @@ require 'spec_helper'
 require 'active_support/concern'
 require 'active_model'
 
-RSpec.describe LangchainrbRails::Models::Prompt do
+RSpec.describe LangchainrbRails::Prompting do
   let(:dummy_class) do
     Class.new do
       include ActiveModel::Validations
-      include LangchainrbRails::Models::Prompt
+      include LangchainrbRails::Prompting
       attr_accessor :template
 
       def self.name
