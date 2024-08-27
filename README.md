@@ -131,7 +131,7 @@ Pinecone Generator does the following:
 
 ### Prompt Generator - adds prompt templating capabilities to your ActiveRecord model
 ```bash
-rails genearate langchainrb_rails:prompt
+rails generate langchainrb_rails:prompt
 ```
 
 This generator adds the following files to your Rails project:
