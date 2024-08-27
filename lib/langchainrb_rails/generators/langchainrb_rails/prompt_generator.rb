@@ -14,6 +14,10 @@ module LangchainrbRails
         template "prompt_model.rb", "app/models/prompt.rb"
         migration_template "create_prompts.rb", "db/migrate/create_prompts.rb"
       end
+
+      def migration_version
+        "[#{::ActiveRecord::VERSION::MAJOR}.#{::ActiveRecord::VERSION::MINOR}]"
+      end
     end
   end
 end
