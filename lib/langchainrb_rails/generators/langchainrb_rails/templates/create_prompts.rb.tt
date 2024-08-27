@@ -1,0 +1,9 @@
+class CreatePrompts < ActiveRecord::Migration<%= migration_version %>
+  def change
+    create_table :prompts do |t|
+      t.text :template, null: false
+
+      t.timestamps
+    end
+  end
+end

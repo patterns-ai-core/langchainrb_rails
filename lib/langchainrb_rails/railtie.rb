@@ -13,6 +13,7 @@ module LangchainrbRails
       require_relative "generators/langchainrb_rails/pinecone_generator"
       require_relative "generators/langchainrb_rails/pgvector_generator"
       require_relative "generators/langchainrb_rails/qdrant_generator"
+      require_relative "generators/langchainrb_rails/prompt_generator"
     end
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "rails/generators"
 require "rails/generators/active_record"
 
@@ -18,7 +20,7 @@ module LangchainrbRails
         "ollama" => "Langchain::LLM::Ollama",
         "openai" => "Langchain::LLM::OpenAI",
         "replicate" => "Langchain::LLM::Replicate"
-      }
+      }.freeze
 
       def post_install_message
         say "Please do the following to start Q&A with your #{model_name} records:", :green

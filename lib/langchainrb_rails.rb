@@ -6,6 +6,7 @@ require "rails"
 require_relative "langchainrb_rails/version"
 require "langchainrb_rails/railtie"
 require "langchainrb_rails/config"
+require "langchainrb_rails/prompting"
 require_relative "langchainrb_overrides/vectorsearch/pgvector"
 
 module LangchainrbRails
@@ -20,6 +21,7 @@ module LangchainrbRails
     autoload :ChromaGenerator, "langchainrb_rails/generators/langchainrb_rails/chroma_generator"
     autoload :PgvectorGenerator, "langchainrb_rails/generators/langchainrb_rails/pgvector_generator"
     autoload :QdrantGenerator, "langchainrb_rails/generators/langchainrb_rails/qdrant_generator"
+    autoload :PromptGenerator, "langchainrb_rails/generators/langchainrb_rails/prompt_generator"
   end
 
   class << self

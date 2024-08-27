@@ -129,3 +129,20 @@ Pinecone Generator does the following:
 2. Adds necessary code to the ActiveRecord model to enable vectorsearch
 3. Adds `pinecone` gem to the Gemfile
 
+### Prompt Generator - adds prompt templating capabilities to your ActiveRecord model
+```bash
+rails generate langchainrb_rails:prompt
+```
+
+This generator adds the following files to your Rails project:
+1. An ActiveRecord `Prompt` model at `app/models/prompt.rb`
+2. A rails migration to create the `prompts` table
+
+You can then use the `Prompt` model to create and manage prompts for your model.
+
+Example usage:
+```ruby
+prompt = Prompt.create!(template: "Tell me a {adjective} joke about {subject}.")
+prompt.render(adjective: "funny", subject: "elephants")
+# => "Tell me a funny joke about elephants."
+```
