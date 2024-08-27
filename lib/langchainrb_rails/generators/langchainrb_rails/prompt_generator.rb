@@ -5,6 +5,11 @@ require "rails/generators/active_record"
 
 module LangchainrbRails
   module Generators
+    # Adds prompt templating capabilities to your ActiveRecord model
+    #
+    # Usage:
+    #     rails generate langchainrb_rails:prompt
+    #
     class PromptGenerator < Rails::Generators::Base
       include ::ActiveRecord::Generators::Migration
 
