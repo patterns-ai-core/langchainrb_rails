@@ -1,10 +1,10 @@
-require 'spec_helper'
+require "spec_helper"
 
-TMP_ROOT = Pathname.new(Dir.mktmpdir('tmp'))
+TMP_ROOT = Pathname.new(Dir.mktmpdir("tmp"))
 
 RSpec.describe LangchainrbRails::Generators::PgvectorGenerator, type: :generator do
   destination TMP_ROOT
-  arguments %w(--model=SupportArticle --llm=openai)
+  arguments %w[--model=SupportArticle --llm=openai]
 
   before(:all) do
     prepare_destination
@@ -40,8 +40,8 @@ RSpec.describe LangchainrbRails::Generators::PgvectorGenerator, type: :generator
 
   it "adds the necessary gems to the Gemfile" do
     assert_file "Gemfile" do |gemfile|
-      assert_match(/gem \"neighbor\"/, gemfile)
-      assert_match(/gem \"ruby-openai\"/, gemfile)
+      assert_match(/gem "neighbor"/, gemfile)
+      assert_match(/gem "ruby-openai"/, gemfile)
     end
   end
 end

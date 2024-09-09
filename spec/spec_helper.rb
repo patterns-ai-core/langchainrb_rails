@@ -5,7 +5,7 @@ require "langchainrb_rails"
 require "rails/generators"
 require "rails/generators/test_case"
 require "generator_spec"
-require 'langchainrb_rails/helpers'
+require "langchainrb_rails/helpers"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
