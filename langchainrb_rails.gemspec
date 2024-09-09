@@ -35,4 +35,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "pry-byebug", "~> 3.10.0"
   spec.add_development_dependency "yard", "~> 0.9.34"
   spec.add_development_dependency "rails", "> 6.0.0"
+  spec.add_development_dependency "generator_spec"
 end

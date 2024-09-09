@@ -24,7 +24,7 @@ module LangchainrbRails
       end
 
       def add_to_model
-        inject_into_class "app/models/#{model_name.downcase}.rb", model_name do
+        inject_into_class "app/models/#{model_name.underscore}.rb", model_name do
           "  vectorsearch\n\n  after_save :upsert_to_vectorsearch\n\n"
         end
       end
@@ -44,7 +44,7 @@ module LangchainrbRails
 
       # @return [String] Table name of the model
       def table_name
-        model_name.downcase.pluralize
+        model_name.tableize
       end
 
       # @return [String] LLM provider to use
