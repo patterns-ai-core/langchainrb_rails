@@ -8,19 +8,38 @@ module LangchainrbRails
     class BaseGenerator < Rails::Generators::Base
       include ::ActiveRecord::Generators::Migration
 
-      class_option :model, type: :string, required: true, desc: "ActiveRecord Model to add vectorsearch to", aliases: "-m"
-      class_option :llm, type: :string, required: true, desc: "LLM provider that will be used to generate embeddings and completions"
-
       # Available LLM providers to be passed in as --llm option
       LLMS = {
+        "anthropic" => "Langchain::LLM::Anthropic",
         "cohere" => "Langchain::LLM::Cohere",
         "google_palm" => "Langchain::LLM::GooglePalm",
+        "google_gemini" => "Langchain::LLM::GoogleGemini",
+        "google_vertex_ai" => "Langchain::LLM::GoogleVertexAI",
         "hugging_face" => "Langchain::LLM::HuggingFace",
         "llama_cpp" => "Langchain::LLM::LlamaCpp",
+        "mistral_ai" => "Langchain::LLM::MistralAI",
         "ollama" => "Langchain::LLM::Ollama",
         "openai" => "Langchain::LLM::OpenAI",
         "replicate" => "Langchain::LLM::Replicate"
       }.freeze
+
+      class_option :model,
+        type: :string,
+        required: true,
+        aliases: "-m",
+        desc: "ActiveRecord Model to add vectorsearch to"
+
+      class_option :llm,
+        type: :string,
+        required: true,
+        default: "openai",
+        desc: "LLM provider that will be used to generate embeddings and completions",
+        enum: LLMS.keys
+
+      # Run bundle install after running the generator
+      def after_generate
+        run "bundle install"
+      end
 
       def post_install_message
         say "Please do the following to start Q&A with your #{model_name} records:", :green

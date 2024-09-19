@@ -28,9 +28,8 @@ module LangchainrbRails
       end
 
       # Adds `chroma-db` gem to the Gemfile
-      # TODO: Can we automatically run `bundle install`?
       def add_to_gemfile
-        gem "chroma-db", version: "~> 0.6.0"
+        gem "chroma-db"
       end
 
       private

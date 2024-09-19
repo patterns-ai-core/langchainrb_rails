@@ -15,9 +15,12 @@ module LangchainrbRails
 
       source_root File.join(__dir__, "templates")
 
-      def create_prompt_model
+      def create_model_file
         template "prompt_model.rb", "app/models/prompt.rb"
-        migration_template "create_prompts.rb", "db/migrate/create_prompts.rb"
+      end
+
+      def copy_migration
+        migration_template "create_prompts.rb", "db/migrate/create_prompts.rb", migration_version: migration_version
       end
 
       def migration_version

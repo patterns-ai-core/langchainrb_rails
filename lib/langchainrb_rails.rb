@@ -3,11 +3,15 @@
 require "forwardable"
 require "langchain"
 require "rails"
-require_relative "langchainrb_rails/version"
-require "langchainrb_rails/railtie"
+
 require "langchainrb_rails/config"
 require "langchainrb_rails/prompting"
+require "langchainrb_rails/railtie"
+require "langchainrb_rails/version"
+
 require_relative "langchainrb_overrides/vectorsearch/pgvector"
+require_relative "langchainrb_overrides/assistant"
+require_relative "langchainrb_overrides/message"
 
 module LangchainrbRails
   class Error < StandardError; end
@@ -18,6 +22,7 @@ module LangchainrbRails
 
   module Generators
     autoload :BaseGenerator, "langchainrb_rails/generators/langchainrb_rails/base_generator"
+    autoload :AssistantGenerator, "langchainrb_rails/generators/langchainrb_rails/assistant_generator"
     autoload :ChromaGenerator, "langchainrb_rails/generators/langchainrb_rails/chroma_generator"
     autoload :PgvectorGenerator, "langchainrb_rails/generators/langchainrb_rails/pgvector_generator"
     autoload :QdrantGenerator, "langchainrb_rails/generators/langchainrb_rails/qdrant_generator"
