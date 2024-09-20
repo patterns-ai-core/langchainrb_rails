@@ -28,7 +28,6 @@ module LangchainrbRails
       end
 
       # Adds `qdrant-ruby` gem to the Gemfile
-      # TODO: Can we automatically run `bundle install`?
       def add_to_gemfile
         gem "qdrant-ruby"
       end

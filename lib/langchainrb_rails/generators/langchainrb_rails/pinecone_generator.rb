@@ -28,9 +28,8 @@ module LangchainrbRails
       end
 
       # Adds `pinecone` gem to the Gemfile
-      # TODO: Can we automatically run `bundle install`?
       def add_to_gemfile
-        gem "pinecone", version: "~> 0.1.6"
+        gem "pinecone"
       end
 
       private

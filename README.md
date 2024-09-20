@@ -146,3 +146,8 @@ prompt = Prompt.create!(template: "Tell me a {adjective} joke about {subject}.")
 prompt.render(adjective: "funny", subject: "elephants")
 # => "Tell me a funny joke about elephants."
 ```
+
+### Assistant Generator - adds assistant capabilities to your ActiveRecord model
+```bash
+rails generate langchainrb_rails:assistant
+```
