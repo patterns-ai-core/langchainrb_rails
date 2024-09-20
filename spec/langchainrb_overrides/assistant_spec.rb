@@ -12,7 +12,8 @@ end
 
 # Stub Assistant class
 class Assistant
-  attr_accessor :id, :instructions, :tool_choice, :tools, :messages
+  attr_accessor :id, :instructions, :tool_choice, :tools
+  attr_writer :messages
 
   def initialize(attributes = {})
     attributes.each { |k, v| send(:"#{k}=", v) }
