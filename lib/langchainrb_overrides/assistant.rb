@@ -8,9 +8,9 @@ module Langchain
 
     alias_method :original_initialize, :initialize
 
-    def initialize(id: nil, **)
+    def initialize(id: nil, **kwargs) # rubocop:disable Style/ArgumentsForwarding
       @id = id
-      original_initialize(**)
+      original_initialize(**kwargs) # rubocop:disable Style/ArgumentsForwarding
     end
 
     def save
@@ -42,17 +42,6 @@ module Langchain
         true
       end
     end
-
-    # def save
-    #   if @persistence_adapter
-    #     @record = @persistence_adapter.save(self)
-    #     self.id = @record.id
-    #     @record
-    #   else
-    #     warn "No persistence adapter set, cannot save assistant"
-    #     false
-    #   end
-    # end
 
     class << self
       def find_assistant(id)
