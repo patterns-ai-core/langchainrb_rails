@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.1.12] - 2024-09-20
+- Adding `rails g langchainrb_rails:assistant --llm=...` generator
+- Adding `rails g langchainrb_rails:prompt` generator
+
 ## [0.1.11] - 2024-06-16
 - Add destroy_from_vectorsearch hook
 
