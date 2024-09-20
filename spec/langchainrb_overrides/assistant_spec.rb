@@ -1,5 +1,5 @@
-require 'spec_helper'
-require_relative '../../lib/langchainrb_overrides/assistant'
+require "spec_helper"
+require_relative "../../lib/langchainrb_overrides/assistant"
 
 # Stub ActiveRecord::Base
 module ActiveRecord
@@ -15,7 +15,7 @@ class Assistant
   attr_accessor :id, :instructions, :tool_choice, :tools, :messages
 
   def initialize(attributes = {})
-    attributes.each { |k, v| send("#{k}=", v) }
+    attributes.each { |k, v| send(:"#{k}=", v) }
     @messages ||= []
   end
 
