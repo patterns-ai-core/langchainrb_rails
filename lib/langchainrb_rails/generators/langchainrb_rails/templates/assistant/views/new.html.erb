@@ -1,26 +1,35 @@
 <div class="assistant-form-container">
   <h1 class="form-header">Create New Assistant</h1>
 
-  <%= form_with(model: @assistant, local: true, class: "assistant-form") do |form| %>
-    <% if @assistant.errors.any? %>
+  <%%= form_with(model: @assistant, local: true, class: "assistant-form") do |form| %>
+    <%% if @assistant.errors.any? %>
       <div class="error-messages">
-        <h2><%= pluralize(@assistant.errors.count, "error") %> prohibited this assistant from being saved:</h2>
+        <h2><%%= pluralize(@assistant.errors.count, "error") %> prohibited this assistant from being saved:</h2>
         <ul>
-          <% @assistant.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
+          <%% @assistant.errors.full_messages.each do |message| %>
+            <li><%%= message %></li>
+            <%% end %>
         </ul>
       </div>
-    <% end %>
+    <%% end %>
 
     <div class="form-group">
-      <%= form.label :instructions, "Instructions for the Assistant" %>
-      <%= form.text_area :instructions, rows: 5, placeholder: "Enter instructions for the assistant..." %>
+      <%%= form.label :instructions, "Instructions for the Assistant" %>
+      <%%= form.text_area :instructions, rows: 5, placeholder: "Enter instructions for the assistant..." %>
+    </div>
+
+    <div class="form-group">
+      <%%= form.label :tool_choice, "Tool Choice" %>
+      <%%= form.select :tool_choice, options_for_select([
+        ['Auto', 'auto'],
+        ['None', 'none'],
+        ['Any', 'any']
+      ]), {}, { class: 'tool-choice-select' } %>
     </div>
 
     <div class="form-actions">
-      <%= form.submit "Create Assistant", class: "submit-button" %>
-      <%= link_to 'Back to Assistants', assistants_path, class: "back-link" %>
+      <%%= form.submit "Create Assistant", class: "submit-button" %>
+      <%%= link_to 'Back to Assistants', assistants_path, class: "back-link" %>
     </div>
-  <% end %>
+  <%% end %>
 </div>

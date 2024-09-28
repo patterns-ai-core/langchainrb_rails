@@ -1,4 +1,4 @@
-<%= form_with(model: [@assistant, Message.new], url: chat_assistant_path(@assistant), method: :post, class: "chat-form") do |form| %>
-  <%= form.text_area :content, class: "chat-input", placeholder: "Type your message..." %>
-  <%= form.submit 'Send', class: "chat-submit" %>
-<% end %>
+<%%= form_with(model: [@assistant, Message.new], url: chat_assistant_path(@assistant), method: :post, class: "chat-form") do |form| %>
+  <%%= form.text_area :content, class: "chat-input", placeholder: "Type your message..." %>
+  <%%= form.submit 'Send', class: "chat-submit" %>
+<%% end %>

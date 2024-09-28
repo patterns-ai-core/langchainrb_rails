@@ -1,11 +1,11 @@
 <div class="chat-container">
-  <h1 class="chat-header">Assistant: <%= @assistant.id %></h1>
+  <h1 class="chat-header">Assistant: <%%= @assistant.id %></h1>
 
   <div id="chat-messages" class="chat-messages">
-    <%= render partial: "assistants/message", collection: @messages %>
+    <%%= render partial: "assistants/message", collection: @messages %>
   </div>
 
-  <%= turbo_frame_tag "new_message" do %>
-    <%= render "assistants/message_form" %>
-  <% end %>
+  <%%= turbo_frame_tag "new_message" do %>
+    <%%= render "assistants/message_form" %>
+  <%% end %>
 </div>
