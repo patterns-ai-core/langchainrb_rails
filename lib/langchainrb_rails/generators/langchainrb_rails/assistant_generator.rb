@@ -51,6 +51,26 @@ module LangchainrbRails
         "[#{::ActiveRecord::VERSION::MAJOR}.#{::ActiveRecord::VERSION::MINOR}]"
       end
 
+      def create_controller_file
+        template "assistant/controllers/assistants_controller.rb", "app/controllers/assistants_controller.rb"
+      end
+
+      def create_view_files
+        template "assistant/views/index.html.erb", "app/views/assistants/index.html.erb"
+        template "assistant/views/new.html.erb", "app/views/assistants/new.html.erb"
+        template "assistant/views/show.html.erb", "app/views/assistants/show.html.erb"
+      end
+
+      def add_routes
+        route <<~EOS
+          resources :assistants do
+            member do
+              post 'chat'
+            end
+          end
+        EOS
+      end
+
       # TODO: Depending on the LLM provider, we may need to add additional gems
       # def add_to_gemfile
       # end

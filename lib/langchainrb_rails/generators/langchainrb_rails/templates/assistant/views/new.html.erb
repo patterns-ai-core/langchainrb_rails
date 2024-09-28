@@ -1,0 +1,10 @@
+<h1>New Assistant</h1>
+
+<%%= form_with(model: @assistant, local: true) do |form| %>
+  <div>
+    <%%= form.label :instructions %>
+    <%%= form.text_area :instructions %>
+  </div>
+
+  <%%= form.submit %>
+<%% end %>

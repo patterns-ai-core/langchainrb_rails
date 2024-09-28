@@ -1,0 +1,9 @@
+<h1>Assistants</h1>
+
+<%%= link_to 'New Assistant', new_assistant_path %>
+
+<ul>
+  <%% @assistants.each do |assistant| %>
+    <li><%%= link_to assistant.instructions, assistant_path(assistant) %></li>
+  <%% end %>
+</ul>
