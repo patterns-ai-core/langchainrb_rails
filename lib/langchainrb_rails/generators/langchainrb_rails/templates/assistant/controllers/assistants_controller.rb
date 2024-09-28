@@ -21,18 +21,22 @@ class AssistantsController < ApplicationController
   def show
     @assistant = Assistant.find(params[:id])
     @messages = @assistant.messages
+    @message = Message.new
   end
 
   def chat
     @assistant = Assistant.find(params[:id])
-    message = @assistant.messages.create(role: 'user', content: params[:content])
-    
+    @message = @assistant.messages.create(role: 'user', content: params[:message][:content])
+
     langchain_assistant = Langchain::Assistant.load(@assistant.id)
-    response = langchain_assistant.chat(params[:content])
-    
-    @assistant.messages.create(role: 'assistant', content: response.content)
-    
-    render json: { message: message, response: response.content }
+    messages = langchain_assistant.add_message_and_run!(content: params[:message][:content])
+    response = messages.last
+
+    @response = @assistant.messages.create(role: 'assistant', content: response.content)
+
+    respond_to do |format|
+      format.turbo_stream
+    end
   end
 
   private

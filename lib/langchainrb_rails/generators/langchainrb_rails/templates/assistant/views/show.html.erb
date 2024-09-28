@@ -1,21 +1,11 @@
-<h1>Assistant: <%%= @assistant.instructions %></h1>
+<div class="chat-container">
+  <h1 class="chat-header">Assistant: <%= @assistant.id %></h1>
 
-<div id="chat-messages">
-  <%% @messages.each do |message| %>
-    <p><strong><%%= message.role %>:</strong> <%%= message.content %></p>
-  <%% end %>
+  <div id="chat-messages" class="chat-messages">
+    <%= render partial: "assistants/message", collection: @messages %>
+  </div>
+
+  <%= turbo_frame_tag "new_message" do %>
+    <%= render "assistants/message_form" %>
+  <% end %>
 </div>
-
-<%%= form_with(url: chat_assistant_path(@assistant), method: :post, remote: true) do |form| %>
-  <%%= form.text_area :content %>
-  <%%= form.submit 'Send' %>
-<%% end %>
-
-<script>
-  document.addEventListener('ajax:success', function(event) {
-    const [data, _status, _xhr] = event.detail;
-    const chatMessages = document.getElementById('chat-messages');
-    chatMessages.innerHTML += `<p><strong>user:</strong> ${data.message.content}</p>`;
-    chatMessages.innerHTML += `<p><strong>assistant:</strong> ${data.response}</p>`;
-  });
-</script>

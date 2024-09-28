@@ -71,6 +71,11 @@ module LangchainrbRails
         EOS
       end
 
+      def copy_stylesheets
+        template "assistant/stylesheets/chat.css", "app/assets/stylesheets/chat.css"
+      end
+
+      # TODO: Do we need to add turbo-rails to the gemfile?
       # TODO: Depending on the LLM provider, we may need to add additional gems
       # def add_to_gemfile
       # end
