@@ -58,6 +58,7 @@ module LangchainrbRails
       def create_view_files
         template "assistant/views/_message.html.erb", "app/views/assistants/_message.html.erb"
         template "assistant/views/_message_form.html.erb", "app/views/assistants/_message_form.html.erb"
+        template "assistant/views/chat.turbo_stream.erb", "app/views/assistants/chat.turbo_stream.erb"
         template "assistant/views/index.html.erb", "app/views/assistants/index.html.erb"
         template "assistant/views/new.html.erb", "app/views/assistants/new.html.erb"
         template "assistant/views/show.html.erb", "app/views/assistants/show.html.erb"
