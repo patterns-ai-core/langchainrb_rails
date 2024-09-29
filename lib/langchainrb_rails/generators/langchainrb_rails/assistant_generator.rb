@@ -79,10 +79,12 @@ module LangchainrbRails
         template "assistant/stylesheets/chat.css", "app/assets/stylesheets/chat.css"
       end
 
-      # TODO: Do we need to add turbo-rails to the gemfile?
       # TODO: Depending on the LLM provider, we may need to add additional gems
-      # def add_to_gemfile
-      # end
+      def add_to_gemfile
+        inside Rails.root do
+          run "bundle add turbo-rails"
+        end
+      end
 
       def post_install_message
         say "1. Set an environment variable ENV['#{llm.upcase}_API_KEY'] for your #{llm_class}."
