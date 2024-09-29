@@ -2,7 +2,6 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
-  font-family: Arial, sans-serif;
 }
 
 .chat-header {
@@ -243,4 +242,10 @@
 .tool-choice-select:focus {
   outline: none;
   border-color: #007bff;
+}
+
+.assistant-list-container,
+.assistant-form-container,
+.chat-container {
+  font-family: Arial, sans-serif;
 }
