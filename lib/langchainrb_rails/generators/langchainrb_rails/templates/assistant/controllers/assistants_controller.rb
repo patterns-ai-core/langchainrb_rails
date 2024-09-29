@@ -12,7 +12,7 @@ class AssistantsController < ApplicationController
   def create
     @assistant = Assistant.new(assistant_params)
     if @assistant.save
-      redirect_to @assistant, notice: 'Assistant was successfully created.'
+      redirect_to @assistant, notice: "Assistant was successfully created."
     else
       render :new
     end
@@ -26,13 +26,13 @@ class AssistantsController < ApplicationController
 
   def chat
     @assistant = Assistant.find(params[:id])
-    @message = @assistant.messages.create(role: 'user', content: params[:message][:content])
+    @message = @assistant.messages.create(role: "user", content: params[:message][:content])
 
     langchain_assistant = Langchain::Assistant.load(@assistant.id)
     messages = langchain_assistant.add_message_and_run!(content: params[:message][:content])
     response = messages.last
 
-    @response = @assistant.messages.create(role: 'assistant', content: response.content)
+    @response = @assistant.messages.create(role: "assistant", content: response.content)
 
     respond_to do |format|
       format.turbo_stream
