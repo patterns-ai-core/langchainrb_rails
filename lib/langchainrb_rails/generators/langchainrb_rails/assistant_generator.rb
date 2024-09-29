@@ -84,6 +84,12 @@ module LangchainrbRails
       # def add_to_gemfile
       # end
 
+      def post_install_message
+        say "1. Set an environment variable ENV['#{llm.upcase}_API_KEY'] for your #{llm_class}."
+        say "2. Run `rails db:migrate` to apply the database migrations to create the assistants and messages tables."
+        say "3. Start your Rails server and navigate to `/assistants` to create your first assistant!"
+      end
+
       private
 
       # @return [String] LLM provider to use
