@@ -1,5 +1,6 @@
 <div class="chat-container">
-  <h1 class="chat-header">Assistant: <%%= @assistant.id %></h1>
+  <h1 class="chat-header"><%%= @assistant.name %></h1>
+  <p class="chat-instructions"><%%= @assistant.instructions %></p>
 
   <div id="chat-messages" class="chat-messages">
     <%%= render partial: "assistants/message", collection: @messages %>

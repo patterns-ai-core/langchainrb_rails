@@ -42,6 +42,8 @@ class AssistantsController < ApplicationController
   private
 
   def assistant_params
-    params.require(:assistant).permit(:instructions, :tool_choice)
+    params
+      .require(:assistant)
+      .permit(:name, :instructions, :tool_choice)
   end
 end

@@ -249,3 +249,22 @@
 .chat-container {
   font-family: Arial, sans-serif;
 }
+
+.chat-instructions {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.form-group input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.form-group input[type="text"]:focus {
+  outline: none;
+  border-color: #007bff;
+}

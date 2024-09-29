@@ -74,6 +74,7 @@ module LangchainrbRails
         EOS
       end
 
+      # TODO: Copy stylesheet into app/assets/stylesheets or whatever the host app uses
       def copy_stylesheets
         template "assistant/stylesheets/chat.css", "app/assets/stylesheets/chat.css"
       end

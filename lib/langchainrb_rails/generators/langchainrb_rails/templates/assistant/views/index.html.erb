@@ -6,7 +6,7 @@
   <ul class="assistant-list">
     <%% @assistants.each do |assistant| %>
       <li class="assistant-item">
-        <%%= link_to assistant.instructions, assistant_path(assistant), class: "assistant-link" %>
+        <%%= link_to assistant.name, assistant_path(assistant), class: "assistant-link" %>
       </li>
     <%% end %>
   </ul>
