@@ -82,8 +82,15 @@ module LangchainrbRails
 
       # TODO: Depending on the LLM provider, we may need to add additional gems
       def add_to_gemfile
-        inside Rails.root do
-          run "bundle add turbo-rails"
+        gem_name = "turbo-rails"
+        gemfile_content = File.read(Rails.root.join("Gemfile"))
+
+        if gemfile_content.include?(gem_name)
+          say_status :skipped, "#{gem_name} already exists in Gemfile"
+        else
+          inside Rails.root do
+            run "bundle add #{gem_name}"
+          end
         end
       end
 
