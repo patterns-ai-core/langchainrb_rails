@@ -32,7 +32,7 @@ class AssistantsController < ApplicationController
 
   def update
     if @assistant.update(assistant_params)
-      redirect_to @assistant, notice: 'Assistant was successfully updated.'
+      redirect_to @assistant, notice: "Assistant was successfully updated."
     else
       render :edit
     end
@@ -55,7 +55,7 @@ class AssistantsController < ApplicationController
 
   def destroy
     @assistant.destroy
-    redirect_to assistants_path, notice: 'Assistant was successfully deleted.'
+    redirect_to assistants_path, notice: "Assistant was successfully deleted."
   end
 
   private
