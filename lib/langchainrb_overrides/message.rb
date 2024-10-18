@@ -1,7 +1,11 @@
+# frozen_string_literal: true
+
 module Langchain
-  module Messages
-    class Base
-      attr_accessor :id
+  class Assistant
+    module Messages
+      class Base
+        attr_accessor :id
+      end
     end
   end
 end
