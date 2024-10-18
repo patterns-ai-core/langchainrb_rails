@@ -1,6 +1,6 @@
 require "spec_helper"
 
-RSpec.describe Langchain::Messages::Base do
+RSpec.describe Langchain::Assistant::Messages::Base do
   describe "#id" do
     it "allows setting and getting an id" do
       message = described_class.new
