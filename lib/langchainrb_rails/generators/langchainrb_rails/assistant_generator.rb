@@ -51,11 +51,59 @@ module LangchainrbRails
         "[#{::ActiveRecord::VERSION::MAJOR}.#{::ActiveRecord::VERSION::MINOR}]"
       end
 
+      def create_controller_file
+        template "assistant/controllers/assistants_controller.rb", "app/controllers/assistants_controller.rb"
+      end
+
+      def create_view_files
+        template "assistant/views/_message.html.erb", "app/views/assistants/_message.html.erb"
+        template "assistant/views/_message_form.html.erb", "app/views/assistants/_message_form.html.erb"
+        template "assistant/views/chat.turbo_stream.erb", "app/views/assistants/chat.turbo_stream.erb"
+        template "assistant/views/edit.html.erb", "app/views/assistants/edit.html.erb"
+        template "assistant/views/index.html.erb", "app/views/assistants/index.html.erb"
+        template "assistant/views/new.html.erb", "app/views/assistants/new.html.erb"
+        template "assistant/views/show.html.erb", "app/views/assistants/show.html.erb"
+      end
+
+      def add_routes
+        route <<~EOS
+          resources :assistants do
+            member do
+              post 'chat'
+            end
+          end
+        EOS
+      end
+
+      # TODO: Copy stylesheet into app/assets/stylesheets or whatever the host app uses
+      def copy_stylesheets
+        template "assistant/stylesheets/chat.css", "app/assets/stylesheets/chat.css"
+      end
+
       # TODO: Depending on the LLM provider, we may need to add additional gems
-      # def add_to_gemfile
-      # end
+      def add_to_gemfile
+        gem_name = "turbo-rails"
+
+        if gem_exists?(gem_name)
+          say_status :skipped, "#{gem_name} already exists in Gemfile"
+        else
+          inside Rails.root do
+            run "bundle add #{gem_name}"
+          end
+        end
+      end
+
+      def post_install_message
+        say "1. Set an environment variable ENV['#{llm.upcase}_API_KEY'] for your #{llm_class}."
+        say "2. Run `rails db:migrate` to apply the database migrations to create the assistants and messages tables."
+        say "3. Start your Rails server and navigate to `/assistants` to create your first assistant!"
+      end
 
       private
+
+      def gem_exists?(gem_name)
+        File.read(Rails.root.join("Gemfile")).include?(gem_name)
+      end
 
       # @return [String] LLM provider to use
       def llm

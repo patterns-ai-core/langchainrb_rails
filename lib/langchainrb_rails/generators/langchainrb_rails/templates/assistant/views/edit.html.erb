@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="form-container">
+    <h1 class="form-title">Edit Assistant</h1>
+
+    <%%= form_with(model: @assistant, local: true, class: "assistant-form") do |form| %>
+      <%% if @assistant.errors.any? %>
+        <div class="error-messages">
+          <h2><%%= pluralize(@assistant.errors.count, "error") %> prohibited this assistant from being saved:</h2>
+          <ul>
+            <%% @assistant.errors.full_messages.each do |message| %>
+              <li><%%= message %></li>
+            <%% end %>
+          </ul>
+        </div>
+      <%% end %>
+
+      <div class="form-group">
+        <%%= form.label :name, class: "form-label" %>
+        <%%= form.text_field :name, class: "form-input" %>
+      </div>
+
+      <div class="form-group">
+        <%%= form.label :instructions, class: "form-label" %>
+        <%%= form.text_area :instructions, class: "form-textarea" %>
+      </div>
+
+      <div class="form-group">
+        <%%= form.label :tool_choice, class: "form-label" %>
+        <%%= form.select :tool_choice, options_for_select([['Auto', 'auto'], ['None', 'none'], ['Any', 'any']], @assistant.tool_choice), {}, { class: 'form-select' } %>
+      </div>
+
+      <div class="form-actions">
+        <%%= form.submit "Update Assistant", class: "form-submit" %>
+        <%%= link_to 'Cancel', assistant_path(@assistant), class: "form-cancel" %>
+      </div>
+    <%% end %>
+  </div>
+</div>

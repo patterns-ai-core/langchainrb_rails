@@ -147,7 +147,10 @@ prompt.render(adjective: "funny", subject: "elephants")
 # => "Tell me a funny joke about elephants."
 ```
 
-### Assistant Generator - adds assistant capabilities to your ActiveRecord model
+### Assistant Generator - adds Langchain::Assistant capabilities to your Rails app
+
+This generator adds Langchain::Assistant-related ActiveRecord models, migrations, controllers, views and route to your Rails app. You can start creating assistants and chatting with them in immediately.
+
 ```bash
-rails generate langchainrb_rails:assistant
+rails generate langchainrb_rails:assistant --llm=openai
 ```

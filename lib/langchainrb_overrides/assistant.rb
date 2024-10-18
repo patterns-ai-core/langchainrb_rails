@@ -58,7 +58,8 @@ module Langchain
           llm: ar_assistant.llm,
           tools: tools,
           instructions: ar_assistant.instructions,
-          tool_choice: ar_assistant.tool_choice
+          # Default to auto to match the behavior of the original Langchain::Assistant
+          tool_choice: ar_assistant.tool_choice || "auto"
         )
 
         ar_assistant.messages.each do |ar_message|

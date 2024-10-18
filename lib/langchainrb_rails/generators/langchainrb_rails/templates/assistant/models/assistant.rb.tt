@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
 class Assistant < ActiveRecord::Base
-  has_many :messages
+has_many :messages, dependent: :destroy
+
+  validates :name, presence: true
+
+  # TODO: Validate tool_choice
 
   def llm
     <%= llm_class %>.new(api_key: ENV["<%= llm.upcase %>_API_KEY"])
