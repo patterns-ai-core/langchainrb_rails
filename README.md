@@ -154,3 +154,11 @@ This generator adds Langchain::Assistant-related ActiveRecord models, migrations
 ```bash
 rails generate langchainrb_rails:assistant --llm=openai
 ```
+
+Available `--llm` options: `anthropic`, `ollama`, `openai`, `gemini`, `mistral` and open-source models via Ollama. The selected LLM will be used to generate completions.
+
+To remove the generated files, run:
+
+```bash
+rails destroy langchainrb_rails:assistant
+```
