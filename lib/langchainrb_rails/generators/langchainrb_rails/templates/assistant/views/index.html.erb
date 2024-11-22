@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="assistants-header">
+    <h1>Assistants</h1>
+    <%%= link_to 'Create New Assistant', new_assistant_path, class: "btn" %>
+  </div>
+
+  <div class="assistants-list">
+    <%% @assistants.each do |assistant| %>
+      <div class="assistant-item">
+        <%%= link_to assistant_path(assistant), class: "assistant-link" do %>
+          <div class="assistant-name"><%%= assistant.name %></div>
+          <div class="assistant-tool"><%%= assistant.tool_choice %></div>
+          <div class="assistant-instructions"><%%= truncate(assistant.instructions, length: 100) %></div>
+        <%% end %>
+      </div>
+    <%% end %>
+  </div>
+</div>

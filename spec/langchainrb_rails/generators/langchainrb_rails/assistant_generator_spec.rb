@@ -12,7 +12,7 @@ RSpec.describe LangchainrbRails::Generators::AssistantGenerator, type: :generato
   end
 
   after(:all) do
-    FileUtils.rm_rf(destination_root)
+    delete_directory(destination_root)
   end
 
   it "creates an assistant model" do
@@ -29,5 +29,35 @@ RSpec.describe LangchainrbRails::Generators::AssistantGenerator, type: :generato
 
   it "creates an assistants migration" do
     assert_migration "db/migrate/create_assistants.rb"
+  end
+
+  describe "views" do
+    it "creates index view" do
+      assert_file "app/views/assistants/index.html.erb"
+    end
+
+    it "creates show view" do
+      assert_file "app/views/assistants/show.html.erb"
+    end
+
+    it "creates edit view" do
+      assert_file "app/views/assistants/edit.html.erb"
+    end
+
+    it "creates new view" do
+      assert_file "app/views/assistants/new.html.erb"
+    end
+
+    it "creates chat partial" do
+      assert_file "app/views/assistants/_message.html.erb"
+    end
+
+    it "creates message form partial" do
+      assert_file "app/views/assistants/_message_form.html.erb"
+    end
+
+    it "creates chat stream template" do
+      assert_file "app/views/assistants/chat.turbo_stream.erb"
+    end
   end
 end

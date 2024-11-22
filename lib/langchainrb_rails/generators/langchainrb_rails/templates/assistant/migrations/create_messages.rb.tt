@@ -2,9 +2,9 @@ class <%= migration_class_name %> < ActiveRecord::Migration<%= migration_version
   def change
     create_table :messages do |t|
       t.references :assistant, foreign_key: true
-      t.string :role
+      t.string :role, null: false
       t.text :content
-      t.json :tool_calls
+      t.json :tool_calls, default: []
       t.string :tool_call_id
       t.timestamps
     end
