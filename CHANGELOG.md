@@ -4,7 +4,7 @@
 - [BREAKING]: A breaking change. After an upgrade, your app may need modifications to keep working correctly.
 - [FEATURE]: A non-breaking improvement to the app. Either introduces new functionality, or improves on an existing feature.
 - [BUGFIX]: Fixes a bug with a non-breaking change.
-- [COMPAT]: Compatibility improvements - changes to make Administrate more compatible with different dependency versions.
+- [COMPAT]: Compatibility improvements - changes to make Langchain.rb more compatible with different dependency versions.
 - [OPTIM]: Optimization or performance increase.
 - [DOCS]: Documentation changes. No changes to the library's behavior.
 - [SECURITY]: A change which fixes a security vulnerability.
