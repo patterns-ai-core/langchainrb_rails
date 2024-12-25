@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     langchainrb_rails (0.1.12)
-      langchainrb (>= 0.7, < 0.19)
+      langchainrb (>= 0.19)
 
 GEM
   remote: https://rubygems.org/
@@ -120,7 +120,7 @@ GEM
     json (2.9.0)
     json-schema (4.3.1)
       addressable (>= 2.8)
-    langchainrb (0.18.0)
+    langchainrb (0.19.2)
       baran (~> 0.1.9)
       json-schema (~> 4)
       matrix
